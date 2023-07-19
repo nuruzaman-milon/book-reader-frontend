@@ -1,0 +1,10 @@
+/* src/index.css */
+
+/* Add this at the top of the file */
+@import "tailwindcss/base";
+
+/* Add this after the @import 'tailwindcss/base'; line */
+@import "tailwindcss/components";
+
+/* Add this at the bottom of the file */
+@import "tailwindcss/utilities";
