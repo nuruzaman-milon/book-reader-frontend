@@ -4,13 +4,13 @@ import NavBar from "./NavBar"
 
 const Layouts = () => {
   return (
-    <>
+    <div>
         <NavBar />
-            <main>
+            <main className="w-[90%] mx-auto">
                 <Outlet />
             </main>
         <Footer />
-    </>
+    </div>
   )
 }
 
