@@ -29,17 +29,17 @@ const NavBar = () => {
         <Navbar.Link href="#"
         >
           <p>
-            About
+            All Books
           </p>
         </Navbar.Link>
         <Navbar.Link href="#">
-          Services
+          Sign In
         </Navbar.Link>
         <Navbar.Link href="#">
-          Pricing
+          Sign Up
         </Navbar.Link>
         <Navbar.Link href="#">
-          Contact
+          Sign Out
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
