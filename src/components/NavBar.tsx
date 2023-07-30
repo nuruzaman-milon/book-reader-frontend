@@ -1,5 +1,5 @@
 import { Navbar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -22,15 +22,11 @@ const NavBar = () => {
           active
           href="#"
         >
-          <p>
-            Home
-          </p>
+          <NavLink to="/">Home</NavLink>
         </Navbar.Link>
-        <Navbar.Link href="#"
+        <Navbar.Link
         >
-          <p>
-            All Books
-          </p>
+          <NavLink to="/all-books">All Books</NavLink>
         </Navbar.Link>
         <Navbar.Link href="#">
           Sign In

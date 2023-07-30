@@ -1,10 +1,10 @@
 'use client'
 import { Button, Card } from "flowbite-react";
-import { useGetAllBooksQuery } from "../redux/services/bookSlice";
+import { useGetAllBooksDscQuery } from "../redux/services/bookSlice";
 import Loading from "../components/Loading";
 
 const Home = () => {
-  const {data:allBooks, isLoading} = useGetAllBooksQuery(''); 
+  const {data:allBooks, isLoading} = useGetAllBooksDscQuery(''); 
   return(
     <>
       {
