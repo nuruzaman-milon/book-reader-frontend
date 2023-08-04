@@ -2,6 +2,7 @@
 import { Button, Card } from "flowbite-react";
 import { useGetAllBooksDscQuery } from "../redux/services/bookSlice";
 import Loading from "../components/Loading";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const {data:allBooks, isLoading} = useGetAllBooksDscQuery(''); 
@@ -29,11 +30,9 @@ const Home = () => {
                  Publication: {data.publication}
                 </p>
               </p>
-              <Button>
-                <p>
+              <Link to={`/book/${data._id}`}><Button>
                   Details
-                </p>
-              </Button>
+              </Button></Link>
           </Card>)
           }
       </div>

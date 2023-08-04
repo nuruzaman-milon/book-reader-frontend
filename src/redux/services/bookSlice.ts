@@ -6,12 +6,15 @@ export const booksApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://book-reader-server.onrender.com/api/v1/books'
     }),
+    tagTypes: ['Book'],
     endpoints:(builder) =>({
         getAllBooks: builder.query<IBooks, string>({
-            query: () => `/`
+            query: () => `/`,
+            providesTags: ['Book'],
         }),
         getAllBooksDsc: builder.query<IBooks, string>({
-            query: () => `/dsc`
+            query: () => `/dsc`,
+            providesTags: ['Book'],
         }),
         getABookById: builder.query<IBook, string>({
             query: (id) => `/${id}`,
@@ -25,7 +28,8 @@ export const booksApi = createApi({
                 headers: {
                   'Content-type': 'application/json; charset=UTF-8',
                 },
-            })
+            }),
+            invalidatesTags: ['Book']
         })
     })
 })

@@ -3,6 +3,7 @@ import { useForm, SubmitHandler  } from "react-hook-form";
 import { IBook } from "../types/booksTypes";
 import { useAddBookMutation } from "../redux/services/bookSlice";
 import { toast } from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 const AddNewBook = () => {
     // const { toast } = useToasts();
@@ -13,7 +14,7 @@ const AddNewBook = () => {
             const book = await addBook(data);
             if (book) {
                 toast.success('book created successfully')
-                console.log(book);
+                return <Navigate to="/" />
             }
         } catch (error) {
             console.log(error);
