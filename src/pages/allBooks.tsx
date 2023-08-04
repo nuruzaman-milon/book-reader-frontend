@@ -1,11 +1,9 @@
 import { Button, Card, Dropdown } from "flowbite-react";
 import Loading from "../components/Loading";
 import { useGetAllBooksQuery } from "../redux/services/bookSlice";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AllBooks = () => {
-  const [booksData, setBooksData] = useState([]);
   const { data: allBooks, isLoading } = useGetAllBooksQuery("");
 
   //get genre data dynamically
@@ -20,10 +18,12 @@ const AllBooks = () => {
 
   const handleGenre = (data: string) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const arrayOfGenre = allBooks?.payload.filter(
-      (genre) => genre.genre === data
-    );
+    //  allBooks?.payload.filter(
+    //   (genre) => genre.genre === data
+    // );
     // console.log(arrayOfGenre);
+    console.log(data);
+    
   };
   return (
     <>
