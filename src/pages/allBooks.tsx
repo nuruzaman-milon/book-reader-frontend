@@ -2,6 +2,7 @@ import { Button, Card, Dropdown } from "flowbite-react";
 import Loading from "../components/Loading";
 import { useGetAllBooksQuery } from "../redux/services/bookSlice";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AllBooks = () => {
   const [booksData, setBooksData] = useState([]);
@@ -30,29 +31,32 @@ const AllBooks = () => {
         <Loading />
       ) : (
         <div>
-          <div>
-            <div>
-              <Dropdown label="Genre">
-                <div className="flex flex-col items-start px-3 py-1">
-                  {distinctArrayOfGenre &&
-                    distinctArrayOfGenre.map((data) => (
-                      <button onClick={() => handleGenre(data)} key={data}>
-                        {data}
-                      </button>
-                    ))}
-                </div>
-              </Dropdown>
+          <div className="flex justify-between">
+            <div className="flex gap-x-2">
+              <div>
+                <Dropdown label="Genre">
+                  <div className="flex flex-col items-start px-3 py-1">
+                    {distinctArrayOfGenre &&
+                      distinctArrayOfGenre.map((data) => (
+                        <button onClick={() => handleGenre(data)} key={data}>
+                          {data}
+                        </button>
+                      ))}
+                  </div>
+                </Dropdown>
+              </div>
+              <div>
+                <Dropdown label="Publication Year">
+                  <div className="flex flex-col">
+                    {distinctArrayOfPublication &&
+                      distinctArrayOfPublication.map((data) => (
+                        <button key={data}>{data}</button>
+                      ))}
+                  </div>
+                </Dropdown>
+              </div>
             </div>
-            <div>
-              <Dropdown label="Publication Year">
-                <div className="flex flex-col">
-                  {distinctArrayOfPublication &&
-                    distinctArrayOfPublication.map((data) => (
-                      <button key={data}>{data}</button>
-                    ))}
-                </div>
-              </Dropdown>
-            </div>
+            <Link to="/add-new-book"><Button>Add New Book</Button></Link>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
             {allBooks?.payload.map((data) => (
